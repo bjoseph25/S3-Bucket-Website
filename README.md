@@ -4,11 +4,11 @@ This project hosts a static website using **Amazon S3 (Simple Storage Service)**
 
 ## 📁 Bucket Details
 
-- **Bucket Name**
-- **Region**
-- **Hosting Type**
-- **URL**
-- 
+**Bucket Name**: `your-bucket-name`
+- **Region**: `your-region` (e.g., `us-east-1`)
+- **Hosting Type**: Static website hosting
+- **URL**: [http://your-bucket-name.s3-website-your-region.amazonaws.com](http://your-bucket-name.s3-website-your-region.amazonaws.com)
+  
 ## 🛠 Features
 
 - Fully static site (HTML, CSS, JS)
@@ -22,3 +22,17 @@ This project hosts a static website using **Amazon S3 (Simple Storage Service)**
 
 ```bash
 aws configure
+aws s3 mb s3://your-bucket-name --region your-region
+
+# Enable static website hosting
+aws s3 website s3://your-bucket-name/ --index-document index.html --error-document error.html
+
+# Make content public (use with caution)
+aws s3api put-bucket-policy --bucket your-bucket-name --policy file://bucket-policy.json
+
+```
+### 2. Deploy Your Website
+```bash
+aws s3 sync ./public s3://your-bucket-name --acl public-read
+```
+
