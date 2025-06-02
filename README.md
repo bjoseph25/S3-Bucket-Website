@@ -8,6 +8,7 @@ This project hosts a static website using **Amazon S3 (Simple Storage Service)**
 - **Region**: `your-region` (e.g., `us-east-1`)
 - **Hosting Type**: Static website hosting
 - **URL**: [http://your-bucket-name.s3-website-your-region.amazonaws.com](http://your-bucket-name.s3-website-your-region.amazonaws.com)
+- **Live URL**: http://network-website-project-brandon.s3-website-us-east-1.amazonaws.com/
   
 ## 🛠 Features
 
